@@ -1,0 +1,2041 @@
+# ULTIMATE MASTER PROMPT — ENTERPRISE-GRADE BANGLADESH-FIRST MULTI-VENDOR E-COMMERCE MARKETPLACE
+
+## 1. ROLE, RESPONSIBILITY, AND OPERATING STANDARD
+
+Act as a **Principal Software Engineer, Senior Full-Stack Architect, Database Architect, Application Security Engineer, Marketplace Domain Expert, UI/UX Engineer, QA Engineer, DevOps Engineer, and Expert AI Coding Agent**.
+
+Your responsibility is to design and build a complete, premium, professional, production-oriented, Bangladesh-first **multi-vendor e-commerce marketplace**.
+
+This is **not** a static UI project, landing page, dashboard prototype, frontend-only demonstration, or collection of disconnected pages.
+
+Build a coherent, real, full-stack marketplace with:
+
+- Customer shopping workflows.
+- Seller onboarding and store management.
+- Multi-vendor product catalog and seller offers.
+- Dynamic product details.
+- Inventory management.
+- Search and filtering.
+- Multi-vendor cart and checkout.
+- Parent orders and seller-specific suborders.
+- Payment architecture and verified payment workflows.
+- Commission and seller earnings.
+- Payout workflows.
+- Returns, refunds, disputes, and support.
+- Dynamic homepage CMS.
+- Dynamic banners and advertising.
+- Promotions and campaigns.
+- Notifications.
+- Reviews.
+- Analytics.
+- Security and auditability.
+- Complete admin control.
+
+The final application must include and correctly integrate:
+
+**Frontend + Backend + Database + Customer Website + Seller Center + Admin Control Center + Real API + Persistent Data + Production-oriented Architecture.**
+
+### Core operating priorities
+
+Follow these priorities:
+
+1. Correctness and requirement compliance.
+2. Real business workflows over superficial UI.
+3. Security, privacy, and authorization.
+4. Data integrity and financial correctness.
+5. Maintainable architecture.
+6. Dynamic database-backed functionality.
+7. Responsive and premium user experience.
+8. Testing and verifiable implementation.
+9. Performance and accessibility.
+10. Honest reporting of implementation status.
+
+Never claim that a feature is complete, tested, integrated, secure, or production-ready unless the available implementation and verification evidence support that claim.
+
+---
+
+# 2. PROJECT IDENTITY AND BUSINESS MODEL
+
+## Project type
+
+Build a large-scale, single-platform, Bangladesh-first **multi-vendor marketplace**.
+
+The platform must support multiple independent sellers operating their own stores within one central marketplace.
+
+### Marketplace model
+
+- Customers can browse and purchase products from multiple sellers.
+- Sellers can manage their own authorized stores, products, inventory, orders, fulfillment, and financial records.
+- The same canonical product may have offers from multiple sellers.
+- Each seller offer may have different prices, stock, delivery conditions, and seller reputation.
+- Sellers must never access or modify another seller's private resources.
+- The platform earns through configurable commissions and may support optional sponsored promotions and subscription plans in the future.
+- Seller subscriptions must not be mandatory for initial seller onboarding unless explicitly configured by the platform owner.
+
+Use large marketplace platforms only as **functional and business references**. Do not copy proprietary branding, logos, source code, or exact interfaces.
+
+---
+
+# 3. MANDATORY REFERENCE IMAGE AND VISUAL DESIGN REQUIREMENT
+
+I will provide one or more reference images.
+
+These images are the **PRIMARY VISUAL SOURCE OF TRUTH** for the public marketplace design, especially the homepage.
+
+Before implementing the design:
+
+1. Inspect the actual supplied images.
+2. Understand their visual hierarchy.
+3. Analyze layout proportions.
+4. Analyze colors and visual identity.
+5. Analyze typography hierarchy.
+6. Analyze spacing and grid structure.
+7. Analyze product card design.
+8. Analyze banner proportions.
+9. Analyze header and navigation placement.
+10. Analyze responsive visual intent.
+
+Reproduce the visual direction faithfully while building a real, functional application.
+
+Follow the supplied reference image for:
+
+- Overall visual identity.
+- Color direction.
+- Layout.
+- Header.
+- Navigation.
+- Hero/banner composition.
+- Section order where appropriate.
+- Product card structure.
+- Image proportions.
+- Spacing.
+- Borders.
+- Shadows.
+- Radius.
+- Typography hierarchy.
+- Whitespace.
+- Content density.
+
+Do not replace the reference design with a generic AI-generated e-commerce design.
+
+Do not invent an unrelated color palette when the supplied image provides the visual direction.
+
+### Important distinction
+
+The reference image governs the **visual direction**, especially for the public storefront and homepage.
+
+Other pages such as:
+
+- Product details.
+- Checkout.
+- Customer account.
+- Seller Center.
+- Admin dashboard.
+- Financial pages.
+- Order management.
+
+must have layouts appropriate to their business purpose while remaining visually consistent with the overall design system.
+
+If an image is missing or inaccessible, do not pretend that it was inspected.
+
+---
+
+# 4. MANDATORY TECHNOLOGY STACK
+
+Use the following technology stack unless the existing repository has a compatible architecture that must be preserved.
+
+## Frontend
+
+- React.
+- TypeScript with strict type checking.
+- Vite where compatible.
+- Tailwind CSS.
+- React Router.
+- Redux Toolkit.
+- React Redux.
+- Zod for appropriate validation.
+- Reusable accessible UI components.
+
+## Backend
+
+- Node.js.
+- Express.
+- TypeScript where supported.
+- REST API.
+- Consistent API response contracts.
+- Mongoose or an appropriate MongoDB driver.
+
+## Database
+
+MongoDB Atlas is mandatory for production application data.
+
+Do not use:
+
+- MongoDB Memory Server as the production application database.
+- local JSON files as production persistence.
+- localStorage as the source of truth for business data.
+- in-memory Maps or temporary fake databases.
+
+## Infrastructure and integrations
+
+Use:
+
+- MongoDB Atlas.
+- Cloudinary for persistent product, store, banner, advertisement, and supported media uploads.
+- A real transactional email provider.
+- Real Google OAuth.
+- Real Facebook OAuth.
+- Configurable supported payment gateways.
+- MongoDB Atlas Search where available and appropriate.
+
+Do not replace the required architecture with Firebase, Supabase, frontend-only storage, or an unrelated stack.
+
+Start with a **modular monolith**, not unnecessary microservices.
+
+---
+
+# 5. REPOSITORY INSPECTION AND IMPLEMENTATION DISCIPLINE
+
+If an existing repository is provided:
+
+1. Inspect the complete project structure.
+2. Read package manifests and scripts.
+3. Inspect frontend routing.
+4. Inspect backend entry points.
+5. Inspect API routes.
+6. Inspect database models.
+7. Inspect authentication.
+8. Inspect state management.
+9. Inspect environment configuration.
+10. Inspect existing tests.
+11. Identify completed and incomplete functionality.
+12. Preserve working architecture where compatible.
+
+Do not unnecessarily rewrite working features.
+
+Fix root causes instead of applying superficial patches.
+
+Make targeted, justified, reviewable changes.
+
+Never invent:
+
+- Environment variables.
+- API credentials.
+- Existing files.
+- Database records.
+- Payment results.
+- OAuth results.
+- Integration success.
+
+If starting from an empty project, establish the architecture and data model before implementing features.
+
+Do not stop after scaffolding.
+
+Implement real workflows.
+
+---
+
+# 6. USER ROLES AND BACKEND AUTHORIZATION
+
+Implement secure backend-enforced role-based access control.
+
+At minimum support:
+
+### Customer
+
+Can:
+
+- Browse products.
+- Manage profile.
+- Manage addresses.
+- Manage cart.
+- Place orders.
+- Track orders.
+- Request returns.
+- Submit eligible reviews.
+- Manage wishlist.
+- Open support tickets.
+
+### Seller
+
+Can only access their authorized:
+
+- Store.
+- Products.
+- Offers.
+- Inventory.
+- Orders and suborders.
+- Fulfillment records.
+- Returns.
+- Reviews where appropriate.
+- Earnings.
+- Commission records.
+- Payout requests.
+- Store settings.
+
+### Admin
+
+Can manage authorized platform operations.
+
+### Super Admin
+
+Can manage system-level administration and privileged roles.
+
+Additional scoped administrative roles may include:
+
+- Catalog Manager.
+- Order Manager.
+- Finance Manager.
+- Support Agent.
+- Content Manager.
+
+Never rely only on frontend route protection.
+
+Every protected backend operation must enforce:
+
+- Authentication.
+- Role authorization.
+- Resource ownership where applicable.
+
+---
+
+# 7. AUTHENTICATION AND ACCOUNT MANAGEMENT
+
+Implement real authentication workflows:
+
+- Email and password registration.
+- Login.
+- Logout.
+- Email verification.
+- Forgot password.
+- Reset password.
+- Secure session management.
+- Google OAuth.
+- Facebook OAuth.
+- Profile management.
+- Account security controls.
+
+Passwords must be securely hashed.
+
+Protect:
+
+- Reset tokens.
+- Session credentials.
+- Sensitive account operations.
+
+OAuth must use real provider credentials and callback flows.
+
+Do not simulate OAuth with fake redirects or automatic login.
+
+Validate OAuth state and provider identity server-side.
+
+Prevent unsafe account linking and account takeover scenarios.
+
+Use secure cookie/session configuration appropriate to the deployment architecture.
+
+Implement rate limiting and appropriate security protections.
+
+---
+
+# 8. SELLER ONBOARDING AND APPROVAL
+
+A customer account must not automatically receive approved seller privileges.
+
+Implement a professional seller onboarding workflow:
+
+1. User creates or logs into an account.
+2. User applies to become a seller.
+3. Seller submits store information.
+4. Seller submits required verification information.
+5. Application remains pending.
+6. Admin reviews the application.
+7. Admin may approve, reject, or request additional information.
+8. Approved sellers gain Seller Center access.
+9. Suspended sellers lose restricted privileges according to policy.
+
+Seller status may include:
+
+- Draft.
+- Pending.
+- Additional Information Required.
+- Approved.
+- Rejected.
+- Suspended.
+
+Every important status change should be traceable.
+
+---
+
+# 9. MULTI-VENDOR CATALOG ARCHITECTURE
+
+This is one of the most important requirements.
+
+Do not model the marketplace as a simple collection of unrelated seller products.
+
+Where appropriate, distinguish clearly between:
+
+1. Canonical Product.
+2. Product Variant.
+3. Seller Offer.
+4. Seller Inventory.
+
+Example:
+
+Canonical Product:
+
+Premium Smartphone XYZ
+
+Variants:
+
+- Black / 128GB
+- Blue / 256GB
+
+Seller Offers:
+
+Seller A:
+- Price: Seller-specific.
+- Stock: Seller-specific.
+- Delivery rules: Seller-specific.
+
+Seller B:
+- Different price.
+- Different stock.
+- Different delivery estimate.
+
+Do not mix Seller A's inventory with Seller B's inventory.
+
+One seller must never fulfill an order using another seller's inventory unless a separately authorized fulfillment model explicitly supports it.
+
+Support:
+
+- Bengali product names.
+- English product names.
+- Descriptions.
+- Specifications.
+- Categories.
+- Subcategories.
+- Brands.
+- Models.
+- SKUs.
+- Product images.
+- Supported product videos.
+- Variants.
+- Seller-specific prices.
+- Seller-specific inventory.
+- Discounts.
+- Promotion validity.
+- Weight.
+- Dimensions.
+- Warranty.
+- Delivery information.
+- Search keywords.
+- Moderation status.
+- Publication status.
+
+Product workflow:
+
+Draft → Pending Review → Approved → Published
+
+Also support appropriate:
+
+- Rejected.
+- Suspended.
+- Archived.
+- Unpublished.
+
+New sellers must not bypass product approval.
+
+---
+
+# 10. PREMIUM AND FULLY DYNAMIC PRODUCT DETAILS PAGE
+
+Build a premium, professional, modern, responsive product details page.
+
+The product details page must use **real database-backed dynamic data**.
+
+Do not create a static hardcoded product page.
+
+Support:
+
+- Breadcrumb navigation.
+- Main product image.
+- Thumbnail gallery.
+- Multiple images.
+- Image zoom.
+- Supported product video.
+- Product title.
+- Brand.
+- Model.
+- SKU.
+- Category.
+- Rating.
+- Rating breakdown.
+- Current price.
+- Previous price.
+- Valid discount.
+- Promotion conditions.
+- Variant selection.
+- Variant-specific SKU.
+- Variant-specific price.
+- Variant-specific stock.
+- Quantity controls.
+- Purchase limits.
+- Stock status.
+- Add to Cart.
+- Buy Now.
+- Wishlist.
+- Delivery information.
+- Delivery estimate.
+- Payment options.
+- Warranty.
+- Return policy.
+- Detailed description.
+- Specifications.
+- Seller information.
+- Seller rating.
+- Store link.
+- Related products.
+- Similar products.
+- Recently viewed products.
+
+### Multiple seller offers
+
+When the same canonical product has multiple seller offers, provide a professional offer comparison experience.
+
+Show relevant:
+
+- Seller identity.
+- Price.
+- Stock availability.
+- Delivery estimate.
+- Store reputation.
+- Offer conditions.
+
+The selected variant and seller offer must resolve to the correct:
+
+- Price.
+- Inventory.
+- SKU.
+- Delivery rules.
+
+Do not show fake ratings, fabricated reviews, or fake stock.
+
+---
+
+# 11. CUSTOMER REVIEWS
+
+Allow reviews only from eligible customers according to a defined purchase policy.
+
+Prefer verified completed and delivered purchases.
+
+Support:
+
+- 1–5 star rating.
+- Written review.
+- Optional validated image uploads.
+- Rating distribution.
+- Review reporting.
+- Review moderation.
+- Seller responses.
+- Duplicate review prevention.
+
+Calculate ratings from actual eligible review data.
+
+Sellers must not be able to delete legitimate negative reviews simply because they dislike them.
+
+---
+
+# 12. FULLY DYNAMIC HOMEPAGE CMS
+
+The homepage must follow the supplied reference image visually while using **dynamic, database-backed content**.
+
+Do not hardcode business content that should be controlled by administrators.
+
+Potential homepage modules include:
+
+- Announcement bar.
+- Header.
+- Navigation.
+- Search.
+- Hero banners.
+- Promotional banners.
+- Category navigation.
+- Shop by category.
+- Flash sale.
+- Best sellers.
+- Trending products.
+- Featured products.
+- New arrivals.
+- Featured stores.
+- Brand collections.
+- Curated collections.
+- Advertisement sections.
+- Promotional campaigns.
+- Trust/service section.
+- Newsletter.
+- Footer.
+
+The Admin Panel must provide dedicated management modules/pages for relevant content.
+
+Admin must be able to control:
+
+- Section visibility.
+- Display order.
+- Titles.
+- Subtitles.
+- Images.
+- Links.
+- Product assignments.
+- Store assignments.
+- Campaign schedules.
+- Start dates.
+- End dates.
+- Publication status.
+
+Do not display broken or empty sections.
+
+Hide sections without eligible content when appropriate.
+
+---
+
+# 13. DYNAMIC BANNER MANAGEMENT
+
+Create a dedicated Admin module for Banner Management.
+
+Do not bury all banner settings inside one generic settings page.
+
+Support dedicated pages or modules for:
+
+- Hero banners.
+- Homepage promotional banners.
+- Category banners.
+- Campaign banners.
+- Seasonal banners.
+- Mobile-specific banners where appropriate.
+
+Each banner may support:
+
+- Title.
+- Subtitle.
+- Image.
+- Mobile image.
+- Link.
+- Call-to-action text.
+- Display position.
+- Display order.
+- Start date.
+- End date.
+- Active/inactive status.
+- Target page.
+- Campaign association.
+
+Validate scheduling and publication rules.
+
+Use Cloudinary or another approved persistent media service.
+
+---
+
+# 14. DYNAMIC ADVERTISEMENT AND SPONSORED CONTENT SYSTEM
+
+Implement a professional advertisement management architecture.
+
+The platform must support configurable internal marketplace advertisements and sponsored placements.
+
+Create a dedicated Admin module for:
+
+- Advertisement management.
+- Advertisement placements.
+- Sponsored products.
+- Sponsored stores.
+- Campaign scheduling.
+- Placement rules.
+- Performance reporting where supported.
+
+Possible placements:
+
+- Homepage banner.
+- Homepage section.
+- Category page.
+- Search results.
+- Product listing.
+- Seller storefront.
+
+Each advertisement should support relevant configuration such as:
+
+- Name.
+- Campaign.
+- Media.
+- Destination link.
+- Placement.
+- Start time.
+- End time.
+- Active status.
+- Display priority.
+- Targeting rules where legitimately supported.
+
+Clearly distinguish:
+
+- Internal marketplace promotions.
+- Sponsored placements.
+- External advertising integrations.
+
+Do not claim that an external advertising campaign is integrated unless the real provider credentials, permissions, APIs, and configuration are available.
+
+All advertisement management must be dynamic and controlled through dedicated administrative workflows.
+
+---
+
+# 15. SEARCH AND BENGALI-ENGLISH PRODUCT DISCOVERY
+
+Implement a real product search system.
+
+Use MongoDB Atlas Search where available and appropriate.
+
+The marketplace must support Bengali and English product discovery.
+
+Support:
+
+- Bengali Unicode normalization.
+- English case normalization.
+- Bengali product names.
+- English product names.
+- Transliteration.
+- Common spelling variations.
+- Synonyms.
+- Curated language mappings.
+- Brand search.
+- Category search.
+- SKU search.
+- Relevant keywords.
+- Fuzzy matching where supported.
+- Relevance ranking.
+- Autocomplete.
+- Recent searches.
+- Pagination.
+- Filters.
+- Sorting.
+- Zero-result handling.
+
+Search suggestions must use actual catalog data.
+
+Do not report unavailable products as available.
+
+### Search autocomplete
+
+Display a controlled number of relevant suggestions.
+
+Support:
+
+- Product image.
+- Product name.
+- Current price.
+- Valid discount information.
+- Category or relevant context.
+- Keyboard navigation.
+- Enter to select.
+- Escape to close.
+- Click selection.
+- Loading state.
+- Error state.
+- No-result state.
+- Debounced requests.
+- Safe stale-request handling.
+
+### Filters
+
+Support relevant:
+
+- Category.
+- Subcategory.
+- Price range.
+- Brand.
+- Rating.
+- Availability.
+- Discount.
+- Seller/store.
+- Delivery availability.
+- Product condition where applicable.
+
+Support sorting:
+
+- Relevance.
+- Newest.
+- Price low to high.
+- Price high to low.
+- Rating.
+
+Persist filters and sorting in the URL.
+
+---
+
+# 16. MULTI-VENDOR CART
+
+Implement both:
+
+1. A full cart page.
+2. A polished accessible cart slide-over/drawer where appropriate.
+
+The cart must use real product and seller data.
+
+Each cart item must include:
+
+- Product image.
+- Product name.
+- Variant.
+- Seller.
+- Unit price.
+- Quantity.
+- Subtotal.
+- Discount.
+- Availability.
+- Remove action.
+- Save to wishlist where supported.
+
+Use Redux Toolkit for appropriate client-side cart state.
+
+For authenticated users, persist cart data on the server.
+
+Support guest carts and carefully validated guest-to-account cart merging.
+
+Never trust client-supplied:
+
+- Prices.
+- Inventory.
+- Product ownership.
+
+### Multi-vendor cart rules
+
+Group cart items by seller.
+
+Calculate:
+
+- Seller-wise subtotal.
+- Seller-specific delivery charges.
+- Valid discounts.
+
+Revalidate prices and stock on the server.
+
+A cart does not automatically reserve inventory unless an explicit checkout reservation process is active.
+
+---
+
+# 17. BANGLADESH-FIRST CHECKOUT
+
+Build a professional, responsive, convenient checkout.
+
+Checkout flow:
+
+1. Delivery address.
+2. Delivery options.
+3. Payment method.
+4. Order review.
+5. Place order.
+
+Do not add unnecessary fields or surprise charges.
+
+### Address support
+
+Support:
+
+- Full name.
+- Email where appropriate.
+- Primary phone number.
+- Alternate phone.
+- Division.
+- District.
+- Upazila/Thana.
+- Union/Ward or appropriate local area.
+- Detailed address.
+- Postal code where applicable.
+- Delivery instructions.
+
+Use a reliable geographic dataset.
+
+Do not present an incomplete or invented geographic hierarchy as authoritative.
+
+Validate address relationships on the server.
+
+### Delivery
+
+Support seller- and product-appropriate:
+
+- Delivery options.
+- Delivery charges.
+- Estimated delivery windows.
+
+Do not promise guaranteed delivery times without actual supporting rules.
+
+---
+
+# 18. PAYMENT ARCHITECTURE
+
+Create a configurable payment architecture.
+
+Support appropriate methods such as:
+
+- Cash on Delivery.
+- bKash.
+- Nagad.
+- Card payments.
+
+Online payments must use real provider integrations.
+
+Do not invent:
+
+- API credentials.
+- Gateway endpoints.
+- Successful payment results.
+
+Implement where supported:
+
+- Payment creation.
+- Server-side verification.
+- Signed webhook verification.
+- Replay protection.
+- Idempotent callback handling.
+- Payment reconciliation.
+
+Never trust a frontend redirect as proof of successful payment.
+
+Order status and payment status must remain separate.
+
+COD order creation does not mean that the order is paid.
+
+---
+
+# 19. SERVER-SIDE PRICE CALCULATION
+
+All authoritative financial calculations must happen on the server.
+
+Calculate:
+
+- Product subtotal.
+- Valid discounts.
+- Seller-wise delivery fees.
+- Eligible coupons.
+- Applicable fees.
+- Applicable taxes where configured.
+- Final total.
+
+Never trust frontend-supplied:
+
+- Prices.
+- Discounts.
+- Commissions.
+- Totals.
+
+Revalidate the authoritative offer before order creation.
+
+---
+
+# 20. ORDER MANAGEMENT AND MULTI-SELLER FULFILLMENT
+
+Implement a professional order architecture.
+
+Use:
+
+- Parent Order.
+- Seller-specific Suborders or Fulfillment Groups.
+
+A customer should experience one coherent checkout even when purchasing from multiple sellers.
+
+Example:
+
+Parent Order
+├── Seller A Suborder
+├── Seller B Suborder
+└── Seller C Suborder
+
+Each seller can access only their authorized suborders.
+
+Support valid order states:
+
+- Pending.
+- Confirmed.
+- Processing.
+- Packed.
+- Shipped.
+- Delivered.
+- Cancellation Requested.
+- Cancelled.
+- Delivery Failed.
+- Return Requested.
+- Returned.
+- Refund Pending.
+- Refunded.
+
+Do not force every order through every status.
+
+Define valid state transitions.
+
+Track separate shipments when sellers fulfill separately.
+
+Support:
+
+- Order confirmation.
+- Order details.
+- Shipment tracking.
+- Cancellation requests.
+- Return requests.
+- Refund tracking.
+- Order filters.
+- Invoice generation where appropriate.
+
+Every order operation must use server-side authorization.
+
+---
+
+# 21. INVENTORY INTEGRITY AND CONCURRENCY
+
+Inventory must remain correct under concurrent checkout.
+
+Implement appropriate:
+
+- Atomic stock updates.
+- Inventory validation.
+- Inventory reservation where needed.
+- Reservation expiration.
+- Offer revalidation.
+- Price revalidation.
+- Negative stock prevention.
+- Overselling prevention.
+- Failed payment handling.
+- Reservation release.
+- Idempotent order creation.
+
+Use appropriate MongoDB:
+
+- Conditional updates.
+- Unique constraints.
+- Indexes.
+- Transactions where supported and appropriate.
+
+Do not assume that a transaction alone solves all concurrency problems.
+
+Define inventory invariants and test simultaneous purchase scenarios.
+
+---
+
+# 22. SELLER CENTER
+
+Create a complete, professional Seller Center.
+
+Use dedicated pages/modules for:
+
+- Dashboard Overview.
+- Sales Analytics.
+- Product Management.
+- Add Product.
+- Edit Product.
+- Inventory.
+- Orders.
+- Fulfillment.
+- Shipments.
+- Returns and Disputes.
+- Store Profile.
+- Storefront Settings.
+- Reviews.
+- Earnings.
+- Commission Breakdown.
+- Payout Requests.
+- Statements.
+- Notifications.
+- Support Tickets.
+
+Do not place unrelated functionality inside one giant page.
+
+Dashboard metrics must come from real authorized database queries.
+
+Clearly distinguish:
+
+- Gross sales.
+- Refund-adjusted sales.
+- Commission.
+- Fees.
+- Refund adjustments.
+- Pending earnings.
+- Held balances.
+- Eligible payout.
+- Completed payout.
+
+---
+
+# 23. ADMIN CONTROL CENTER — DEDICATED MODULE ARCHITECTURE
+
+Build a powerful, protected, professional Admin Control Center.
+
+Do not build one generic settings page containing the entire platform.
+
+Create clear, dedicated routes/pages/modules.
+
+At minimum include:
+
+## Dashboard
+
+Real database-backed marketplace metrics.
+
+## User Management
+
+- Customers.
+- Sellers.
+- Admin users.
+- Status management.
+
+## Seller Management
+
+- Seller applications.
+- Approval.
+- Rejection.
+- Suspension.
+- Store review.
+
+## Product and Catalog Management
+
+- Products.
+- Canonical products.
+- Seller offers.
+- Product moderation.
+- Categories.
+- Subcategories.
+- Brands.
+
+## Order Management
+
+- Parent orders.
+- Seller suborders.
+- Order status.
+- Delivery issues.
+
+## Payment Management
+
+- Transactions.
+- Payment status.
+- Reconciliation issues.
+
+## Financial Management
+
+- Commission rules.
+- Seller earnings.
+- Ledger records.
+- Payout requests.
+- Settlement records.
+
+## Return and Refund Management
+
+- Return requests.
+- Evidence.
+- Disputes.
+- Refund workflows.
+
+## Homepage CMS
+
+Dedicated management for dynamic public content.
+
+## Banner Management
+
+Dedicated banner pages and controls.
+
+## Advertisement Management
+
+Dedicated pages for:
+
+- Advertisement campaigns.
+- Sponsored placements.
+- Advertisement scheduling.
+
+## Promotions
+
+- Flash sales.
+- Coupons.
+- Campaigns.
+- Product promotions.
+
+## Search Management
+
+- Synonyms.
+- Transliteration.
+- Language mappings.
+- Search analytics.
+- Zero-result queries.
+
+## Review Management
+
+- Moderation.
+- Reports.
+
+## Support Management
+
+- Customer tickets.
+- Seller tickets.
+- Priority and assignment.
+
+## Shipping and Service Areas
+
+- Delivery rules.
+- Service areas.
+
+## Notifications
+
+- Customer notifications.
+- Seller notifications.
+- Admin notifications.
+
+## Roles and Permissions
+
+Manage authorized administrative roles.
+
+## Audit Logs
+
+Record sensitive administrative operations.
+
+## Settings
+
+Only genuine platform-wide settings belong here.
+
+Every administrative module must have appropriate:
+
+- Routes.
+- Permissions.
+- Loading states.
+- Empty states.
+- Error handling.
+- Search/filtering where appropriate.
+- Pagination where appropriate.
+
+---
+
+# 24. COMMISSION, FINANCIAL LEDGER, AND PAYOUTS
+
+Implement a traceable financial architecture.
+
+Support:
+
+- Category-based commission rules.
+- Seller-specific approved overrides.
+- Order-level commission calculations.
+- Seller payable records.
+- Refund adjustments.
+- Cancellation adjustments.
+- Held balances.
+- Eligible balances.
+- Payout requests.
+- Approval workflows.
+- Settlement statements.
+- Reconciliation.
+- Duplicate payout prevention.
+- Financial audit trails.
+
+Define the commissionable base clearly.
+
+Do not hardcode one commission example as the universal business rule.
+
+Use a ledger-oriented and auditable design.
+
+Do not silently overwrite historical financial records.
+
+Corrections should create traceable adjustment entries.
+
+Use appropriate:
+
+- Idempotency keys.
+- Unique constraints.
+- Transaction boundaries.
+- Provider reconciliation.
+
+Do not mark a payout completed without reliable confirmation from the actual configured payout process.
+
+Do not fabricate successful seller transfers.
+
+---
+
+# 25. RETURNS, REFUNDS, DISPUTES, AND SUPPORT
+
+Implement a real workflow for:
+
+- Return eligibility.
+- Return windows.
+- Return reasons.
+- Evidence attachments.
+- Seller response.
+- Admin review.
+- Dispute escalation.
+- Return shipment.
+- Returned-item receipt.
+- Refund approval.
+- Gateway refund execution where supported.
+- Refund confirmation.
+- Financial adjustment.
+
+Approval must not automatically mean that a refund was successfully executed.
+
+### Support system
+
+Support tickets must include:
+
+- Customer or seller ownership.
+- Optional linked order.
+- Category.
+- Priority.
+- Assigned staff.
+- Status.
+- Reply history.
+- Validated attachments.
+- Resolution notes.
+- Audit trail.
+
+---
+
+# 26. NOTIFICATION SYSTEM
+
+Implement real in-app and transactional email notifications.
+
+Customer notifications:
+
+- Account verification.
+- Order confirmation.
+- Payment updates.
+- Shipping updates.
+- Delivery.
+- Cancellation.
+- Return and refund updates.
+
+Seller notifications:
+
+- New orders.
+- Product approval/rejection.
+- Low stock.
+- Returns.
+- Disputes.
+- Payout updates.
+
+Admin notifications:
+
+- Seller applications.
+- Reported content.
+- Payment failures.
+- Refund requests.
+- Payout requests.
+- Priority support tickets.
+
+Avoid exposing unnecessary personal or financial information in notifications.
+
+Record relevant delivery failures.
+
+Avoid duplicate business actions during retries.
+
+---
+
+# 27. DYNAMIC PROMOTIONS AND CAMPAIGNS
+
+Create dedicated administrative management for:
+
+- Flash sales.
+- Coupons.
+- Promotional campaigns.
+- Product collections.
+- Featured products.
+- Featured stores.
+- Category campaigns.
+- Seasonal campaigns.
+
+Flash sales must have:
+
+- Real start time.
+- Real end time.
+- Eligible products.
+- Valid discounts.
+- Stock checks.
+- Publication rules.
+
+Best sellers must derive from real eligible order data.
+
+Trending products must derive from defined real activity signals.
+
+Do not fabricate:
+
+- Sales.
+- Views.
+- Ratings.
+- Conversions.
+
+---
+
+# 28. RECOMMENDATIONS
+
+Implement practical recommendations using legitimate available signals.
+
+Possible signals:
+
+- Product category.
+- Attributes.
+- Purchase history.
+- Recently viewed products.
+- Wishlist activity.
+- Search activity.
+- Aggregate product performance.
+- Similar products.
+
+Respect privacy.
+
+Do not expose one user's private activity to another user.
+
+If sufficient personalization data does not exist, use sensible category-relevant or popular recommendations.
+
+Clearly distinguish implemented recommendation logic from future advanced infrastructure.
+
+---
+
+# 29. CLOUDINARY AND MEDIA MANAGEMENT
+
+Use Cloudinary or an approved persistent media service.
+
+Support real file uploads for:
+
+- Products.
+- Stores.
+- Banners.
+- Advertisements.
+- Campaigns.
+- Reviews where authorized.
+
+Do not use Base64 image data as the normal production persistence method.
+
+Implement:
+
+- File type validation.
+- File size validation.
+- Appropriate dimension restrictions.
+- Server-side authorization.
+- Secure upload workflow.
+- Progress feedback.
+- Error feedback.
+- Preview.
+- Safe replacement.
+- Safe deletion.
+- Ownership verification.
+
+Never expose media provider secrets to the browser.
+
+A seller must never modify another seller's media.
+
+---
+
+# 30. MONGODB DATA MODEL
+
+Design a consistent production-oriented data model.
+
+Relevant entities may include:
+
+- Users.
+- Roles.
+- Permissions.
+- Customer profiles.
+- Addresses.
+- Seller applications.
+- Seller profiles.
+- Stores.
+- Categories.
+- Subcategories.
+- Brands.
+- Canonical products.
+- Product variants.
+- Seller offers.
+- Inventory.
+- Media metadata.
+- Carts.
+- Wishlists.
+- Orders.
+- Seller suborders.
+- Shipments.
+- Payments.
+- Transactions.
+- Refunds.
+- Commission rules.
+- Financial ledger entries.
+- Payouts.
+- Reviews.
+- Review reports.
+- Coupons.
+- Campaigns.
+- Banners.
+- Advertisements.
+- CMS sections.
+- Search mappings.
+- Notifications.
+- Support tickets.
+- Audit logs.
+- Platform settings.
+
+Use indexes and unique constraints based on real access patterns.
+
+Keep ownership and references consistent.
+
+Do not place unbounded arrays of transactions or events inside a single document.
+
+Do not use localStorage as the source of truth for:
+
+- Orders.
+- Inventory.
+- Payments.
+- Seller permissions.
+- Financial records.
+
+---
+
+# 31. PROJECT ARCHITECTURE
+
+Use a maintainable modular architecture.
+
+A suitable structure may include:
+
+marketplace/
+
+apps/
+- web/
+- api/
+
+packages/
+- shared-types/
+- shared-validation/
+
+docs/
+- architecture
+- environment
+- API contracts
+- security
+- deployment
+
+Backend modules should use appropriate separation of:
+
+- Model/schema.
+- Validation.
+- Service/business logic.
+- Controller.
+- Routes.
+- Authorization policy.
+- Tests.
+
+Avoid:
+
+- Oversized components.
+- Monolithic route handlers.
+- Business logic scattered throughout UI components.
+- Circular dependencies.
+- Empty files created only to imitate a folder structure.
+
+The final architecture must reflect actual implementation.
+
+---
+
+# 32. CUSTOM UI, MODALS, NOTIFICATIONS, AND FEEDBACK
+
+Create a premium, cohesive UI component system.
+
+Implement custom:
+
+- Toast notifications.
+- Success messages.
+- Error messages.
+- Warning messages.
+- Informational messages.
+- Modal dialogs.
+- Confirmation dialogs.
+- Drawers.
+- Dropdowns.
+- Popovers.
+- Accessible backdrops.
+- Loading indicators.
+- Skeletons.
+- Empty states.
+- Form validation feedback.
+
+Do not use browser-native:
+
+- alert().
+- confirm().
+- prompt().
+
+Ensure:
+
+- Keyboard navigation.
+- Escape-key handling.
+- Focus management.
+- Focus restoration.
+- Accessible names.
+- Correct roles.
+- Mobile compatibility.
+- Proper overlay stacking.
+- No unintended background interaction.
+- No unintended page scrolling.
+
+Every visible interactive control must perform its intended action.
+
+---
+
+# 33. RESPONSIVE DESIGN, SEO, ACCESSIBILITY, AND PERFORMANCE
+
+The entire application must be responsive for:
+
+- Desktop.
+- Tablet.
+- Mobile.
+
+Support:
+
+- Touch-friendly controls.
+- Responsive images.
+- Mobile navigation.
+- No unintended horizontal overflow.
+- Usable checkout on mobile.
+- Usable Seller Center on mobile.
+- Usable Admin workflows on mobile where practical.
+
+### SEO
+
+Implement where appropriate:
+
+- Readable URLs.
+- Product URLs.
+- Category URLs.
+- Unique metadata.
+- Bengali and English metadata where appropriate.
+- Canonical URLs.
+- XML sitemap.
+- Robots directives.
+- Product structured data.
+- Breadcrumb structured data.
+- Open Graph metadata.
+- Correct unavailable product handling.
+
+Do not assume that a client-rendered SPA automatically provides complete SEO.
+
+Use an appropriate verified SEO delivery strategy where necessary.
+
+### Performance
+
+Implement:
+
+- Optimized images.
+- Lazy loading.
+- Pagination.
+- Indexed queries.
+- Debounced search.
+- Efficient API payloads.
+- Safe caching.
+- Request limits.
+- Error logging.
+
+Optimize for Bangladesh's mobile-first users and potentially slower networks.
+
+### Accessibility
+
+Support:
+
+- Semantic markup.
+- Visible focus states.
+- Accessible labels.
+- Field errors.
+- Appropriate contrast.
+- Screen-reader-friendly status updates.
+- Reduced-motion support.
+
+---
+
+# 34. SECURITY REQUIREMENTS
+
+Apply professional security practices.
+
+Protect against relevant risks including:
+
+- Unauthorized resource access.
+- Privilege escalation.
+- IDOR vulnerabilities.
+- Unsafe input.
+- Account takeover.
+- Weak password handling.
+- Invalid OAuth callbacks.
+- Fake payment callbacks.
+- Duplicate webhook processing.
+- Unauthorized media modification.
+- Unauthorized financial actions.
+
+Never trust client-supplied:
+
+- Roles.
+- Prices.
+- Payment success.
+- Ownership.
+- Commissions.
+- Inventory state.
+
+Implement server-side validation using appropriate schemas.
+
+Sensitive operations must be auditable.
+
+No public visitor may grant themselves an Admin or Super Admin role.
+
+Implement a secure initial Super Admin bootstrap process.
+
+Never expose privileged credentials in client code.
+
+---
+
+# 35. TESTING AND VERIFICATION
+
+Implement automated testing appropriate to the project.
+
+Prioritize tests for:
+
+### Authentication
+
+- Registration.
+- Login.
+- Protected routes.
+- Password reset.
+- OAuth validation.
+- Role permissions.
+
+### Seller isolation
+
+Verify:
+
+- Seller A cannot access Seller B's private resources.
+- Customers cannot access other customers' orders.
+- Unauthorized users cannot access Admin APIs.
+- Public users cannot assign privileged roles.
+
+### Catalog
+
+Test:
+
+- Product approval.
+- Variant validation.
+- Seller offer ownership.
+- Inventory isolation.
+- Media authorization.
+
+### Search
+
+Test:
+
+- Bengali-English mappings.
+- Unicode normalization.
+- Filters.
+- Sorting.
+- Autocomplete.
+- Zero-result behavior.
+- Stock correctness.
+
+### Checkout and inventory
+
+Test:
+
+- Server-side price calculation.
+- Invalid quantities.
+- Multi-seller grouping.
+- Concurrent purchases.
+- Overselling prevention.
+- Reservation expiration.
+- Idempotent order creation.
+
+### Payments and finance
+
+Test:
+
+- Invalid webhook rejection.
+- Duplicate callback handling.
+- Payment reconciliation.
+- Commission calculations.
+- Refund adjustments.
+- Payout idempotency.
+
+### CMS
+
+Test:
+
+- Admin content changes.
+- Banner publication.
+- Advertisement scheduling.
+- Empty section behavior.
+
+### UI
+
+Test:
+
+- Responsive workflows.
+- Cart drawer.
+- Dialog keyboard behavior.
+- Form validation.
+- Loading states.
+- Empty states.
+- Error states.
+
+Run available:
+
+- Type checking.
+- Linting.
+- Tests.
+- Production build.
+
+Do not claim that tests passed without actual execution results.
+
+---
+
+# 36. ENVIRONMENT AND DEPLOYMENT
+
+Use a deployment architecture compatible with the selected hosting environment.
+
+Provide a safe `.env.example`.
+
+Document required configuration for:
+
+- MongoDB Atlas.
+- Cloudinary.
+- Google OAuth.
+- Facebook OAuth.
+- Transactional email.
+- Payment providers.
+- Application origin.
+- API URL.
+- Authentication secrets.
+- Cookie/session configuration.
+- Search configuration.
+
+Never place real secrets in:
+
+- Source code.
+- Client bundles.
+- Public documentation.
+- Logs.
+
+Do not invent credentials.
+
+Implement:
+
+- Database connection handling.
+- Health checks.
+- Error logging.
+- Graceful shutdown where appropriate.
+
+Document integration limitations honestly.
+
+---
+
+# 37. REQUIRED IMPLEMENTATION WORKFLOW
+
+Follow this systematic implementation sequence.
+
+### Phase 1
+
+Repository inspection and requirement analysis.
+
+### Phase 2
+
+Architecture, folder structure, database model, API contracts, and security boundaries.
+
+### Phase 3
+
+Application foundation, MongoDB Atlas connection, configuration, authentication, and RBAC.
+
+### Phase 4
+
+Seller onboarding, stores, catalog, variants, seller offers, inventory, and product moderation.
+
+### Phase 5
+
+Reference-image-based public UI, homepage, shared design system, CMS, banners, and advertisements.
+
+### Phase 6
+
+Search, filters, autocomplete, Bengali-English mappings.
+
+### Phase 7
+
+Cart, checkout, addresses, inventory validation, and multi-vendor orders.
+
+### Phase 8
+
+Payment integration, commissions, financial records, refunds, and payout workflows.
+
+### Phase 9
+
+Seller Center, Admin Control Center, reviews, support, notifications, and analytics.
+
+### Phase 10
+
+Recommendations, promotions, advanced reporting, SEO, accessibility, and performance.
+
+### Phase 11
+
+Security review, automated testing, production build, integration verification, and documentation.
+
+These phases organize the work.
+
+They do not authorize replacing unfinished features with fake implementations.
+
+If all features cannot be implemented in one pass:
+
+- Build a real end-to-end vertical slice first.
+- Maintain a clear completion checklist.
+- Continue systematically.
+- Clearly report incomplete work.
+
+Never silently replace unfinished backend features with frontend mocks.
+
+---
+
+# 38. ACCEPTANCE CRITERIA
+
+The final application should demonstrate that:
+
+1. Customers can register and authenticate.
+2. Google and Facebook authentication use real configured providers.
+3. Customers can browse and search real catalog data.
+4. Bengali and English search works against implemented catalog data.
+5. The supplied reference image is used as the actual visual direction.
+6. Homepage content is dynamically managed through Admin CMS.
+7. Banners are dynamically managed through dedicated Admin workflows.
+8. Advertisements and sponsored placements are dynamically configurable.
+9. Sellers require approval before privileged Seller Center access.
+10. Sellers can manage only their own authorized resources.
+11. Multiple sellers can offer the same canonical product without mixing inventory.
+12. Product details are fully dynamic and database-backed.
+13. Product variants resolve to the correct seller offer and inventory.
+14. Multi-vendor carts group items correctly.
+15. Checkout calculates authoritative totals on the server.
+16. Orders support parent and seller-specific suborders.
+17. Inventory is protected against the tested overselling scenarios.
+18. Payment status depends on verified provider evidence.
+19. Duplicate callbacks do not duplicate financial effects.
+20. Commission and seller financial records are traceable.
+21. Payout workflows prevent duplicate processing.
+22. Reviews are limited to eligible customers.
+23. Admin APIs enforce permissions.
+24. Cloudinary uploads use authorized persistent storage.
+25. Notifications represent real application events.
+26. Customer, Seller, and Admin workflows are responsive.
+27. No important feature is represented only by a fake success message.
+28. Typecheck, lint, production build, and available tests are actually executed and reported honestly.
+
+Do not replace these criteria with:
+
+- Screenshots.
+- Static mock data.
+- Fake API responses.
+- Demo-only buttons.
+- localStorage-based business persistence.
+- superficial visual completeness.
+
+---
+
+# 39. FINAL REPORT
+
+At the end of implementation, provide:
+
+1. Project summary.
+2. Final folder structure.
+3. Technology stack.
+4. Architecture decisions.
+5. Implemented features.
+6. Customer workflows.
+7. Seller workflows.
+8. Admin modules.
+9. Database models and relationships.
+10. API routes and authorization boundaries.
+11. Dynamic CMS modules.
+12. Banner and advertisement management architecture.
+13. Authentication status.
+14. Payment integration status.
+15. External integrations and configuration still required.
+16. Environment variables required.
+17. Development commands.
+18. Production commands.
+19. Tests actually executed.
+20. Actual verification results.
+21. Incomplete features.
+22. Blocked features.
+23. Security limitations.
+24. Deployment limitations.
+25. Acceptance criteria checklist.
+
+For every major feature, classify it honestly as:
+
+- Implemented and verified.
+- Implemented but not fully verified.
+- Partially implemented.
+- Blocked by missing external configuration.
+- Not implemented.
+
+Never fabricate:
+
+- Test results.
+- Payment transactions.
+- Email delivery.
+- OAuth success.
+- Seller payouts.
+- Production deployment.
+- External API integration.
+
+---
+
+# 40. FINAL DIRECTIVE
+
+Build the **actual marketplace, not merely its appearance**.
+
+The final project must be a premium, professional, full-stack, database-backed, secure, responsive, dynamic multi-vendor e-commerce marketplace.
+
+The supplied reference image must guide the visual design.
+
+The public website, product details pages, seller storefronts, banners, promotions, advertisements, and CMS content must be dynamic where business requirements require dynamic management.
+
+The Admin Control Center must use clear, dedicated pages and modules for different platform operations instead of placing everything inside one generic settings page.
+
+Preserve:
+
+- Real MongoDB Atlas persistence.
+- Secure backend authorization.
+- Seller ownership isolation.
+- Canonical product and seller-offer architecture.
+- Dynamic product details.
+- Dynamic banners.
+- Dynamic advertisements.
+- Dynamic homepage CMS.
+- Bengali-English search.
+- Multi-vendor inventory isolation.
+- Parent and seller-specific order workflows.
+- Server-side price calculation.
+- Verified payment workflows.
+- Traceable commissions.
+- Auditable financial records.
+- Seller payout workflows.
+- Real notifications.
+- Cloudinary media management.
+- Customer, Seller, and Admin workflows.
+
+Do not create a project that merely looks complete.
+
+Build a coherent system where the major workflows genuinely connect:
+
+Customer
+→ Product Discovery
+→ Seller Offer Selection
+→ Cart
+→ Checkout
+→ Verified Order Creation
+→ Seller Suborder
+→ Fulfillment
+→ Delivery
+→ Review / Return
+→ Financial Settlement
+
+Inspect before changing.
+
+Validate before trusting.
+
+Diagnose before fixing.
+
+Test before claiming success.
+
+Begin by inspecting the available repository and the supplied reference images.
+
+Then design and implement the system systematically as a real, maintainable, production-oriented multi-vendor marketplace.

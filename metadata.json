@@ -1,0 +1,6 @@
+{
+  "name": "NOVARA — Multi-Vendor Marketplace Bangladesh",
+  "description": "Bangladesh-first multi-vendor e-commerce marketplace featuring canonical catalog, multi-seller offers, bKash/Nagad/COD checkout, Seller Center, and Admin CMS.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
